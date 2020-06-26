@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-admin-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-admin-app
+  template:
+    metadata:
+      labels:
+        app: user-admin-app
+    spec:
+      containers:
+        - image: timheuett/kubedemo-user-admin-app:latest
+          imagePullPolicy: Always
+          name: user-admin-app
+          ports:
+            - containerPort: 80

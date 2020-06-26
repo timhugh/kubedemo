@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler'
+Bundler.setup
+
+require 'dotenv/load'
+
+$LOAD_PATH.unshift('./lib')
+
+require 'user_service'
+Rack::Server.start(
+  app: UserService.new,
+  Port: ENV['HTTP_PORT']
+)

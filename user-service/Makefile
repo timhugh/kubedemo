@@ -1,11 +1,15 @@
 sha=$(shell git rev-parse --short HEAD)
-docker-registry=$(shell minikube ip):5000
-target=user-service
+target=timheuett/kubedemo-user-service
 
 .PHONY: docker-build
 docker-build:
-	docker build -t ${docker-registry}/${target}:${sha} .
+	docker build -t ${target}:${sha} -t ${target}:latest .
 
 .PHONY: docker-push
-docker-push: docker-build
-	docker push ${docker-registry}/${target}:${sha}
+docker-push: docker-build docker-login
+	docker push ${target}:${sha}
+	docker push ${target}:latest
+
+.PHONY: docker-login
+docker-login:
+	docker login

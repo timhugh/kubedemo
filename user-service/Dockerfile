@@ -9,4 +9,4 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 COPY . ./
-CMD [ "bin/server" ]
+CMD [ "script/start.sh" ]

@@ -14,6 +14,8 @@ GEM
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     transproc (1.1.1)
     url_mount (0.2.1)
       rack
@@ -25,6 +27,7 @@ DEPENDENCIES
   dotenv
   hanami-router
   rack
+  rack-cors
 
 RUBY VERSION
    ruby 2.7.1p83

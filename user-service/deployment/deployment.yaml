@@ -13,7 +13,7 @@ spec:
         app: user-service
     spec:
       containers:
-        - image: timheuett/kubedemo-user-service:latest
+        - image: timheuett/kubedemo-user-service:c18a899
           imagePullPolicy: Always
           name: user-service
           ports:

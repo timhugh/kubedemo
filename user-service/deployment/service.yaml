@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: user-service-lb
+  name: user-service
 spec:
   type: LoadBalancer
   ports:
-    - port: 80
-      targetPort: 80
+    - name: http
       protocol: TCP
-      name: http
+      port: 80
+      targetPort: 80
   selector:
     app: user-service

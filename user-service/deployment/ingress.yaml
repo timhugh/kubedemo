@@ -11,5 +11,5 @@ spec:
         paths:
           - path: /user-service/(.*)
             backend:
-              serviceName: user-service-lb
+              serviceName: user-service
               servicePort: 80

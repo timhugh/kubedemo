@@ -13,7 +13,7 @@ spec:
         app: user-admin-app
     spec:
       containers:
-        - image: timheuett/kubedemo-user-admin-app:c18a899
+        - image: timheuett/kubedemo-user-admin-app:latest
           imagePullPolicy: Always
           name: user-admin-app
           ports:

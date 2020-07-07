@@ -17,14 +17,8 @@ export class HttpResource<ResourceClass> {
     this.client = axios.create({ baseURL: apiHost });
   }
 
-  fetch(id?: any): Promise<Array<ResourceClass>> {
-    let path;
-    if (typeof id === 'undefined' || id === null) {
-      path = this.resourceName;
-    } else {
-      path = `${this.resourceName}/${id}`;
-    }
-    return this.client.get(path)
-      .then((response: HttpResponse) => response.data as Array<ResourceClass>)
+  fetch(): Promise<Array<ResourceClass>> {
+    return this.client.get(this.resourceName)
+    .then((response: HttpResponse) => response.data as Array<ResourceClass>)
   }
 };

@@ -6,14 +6,14 @@ function UserTable({ userApi }: { userApi: Resource<User> }) {
 
   const [users, setUsers] = useState<Array<User>>([]);
   const userColumns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-    },
-    {
-      title: 'Role',
-      dataIndex: 'role',
-    },
+  {
+    title: 'Name',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Role',
+    dataIndex: 'role',
+  },
   ];
 
   useEffect(() => {
@@ -23,11 +23,11 @@ function UserTable({ userApi }: { userApi: Resource<User> }) {
     }
 
     fetchUsers();
-  }, []);
+  }, [userApi]);
 
   return (
     <Table dataSource={ users } columns={ userColumns }/>
-  );
+    );
 }
 
 export default UserTable;

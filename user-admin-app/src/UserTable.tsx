@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import { Resource, User } from './core';
 
+const userColumns = [
+{
+  title: 'Name',
+  dataIndex: 'name',
+},
+{
+  title: 'Role',
+  dataIndex: 'role',
+},
+];
+
 function UserTable({ userApi }: { userApi: Resource<User> }) {
 
   const [users, setUsers] = useState<Array<User>>([]);
-  const userColumns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-  },
-  {
-    title: 'Role',
-    dataIndex: 'role',
-  },
-  ];
 
   useEffect(() => {
     async function fetchUsers() {

@@ -9,10 +9,10 @@ $LOAD_PATH.unshift('./lib')
 
 require 'rack/cors'
 use Rack::Cors do
-  allow do
-    origins '*'
-    resource '*', headers: :any, methods: :any
-  end
+	allow do
+		origins '*'
+		resource '*', headers: :any, methods: :any
+	end
 end
 
 require 'user_service'

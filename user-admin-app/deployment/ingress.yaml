@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: user-admin-app-ingress
+spec:
+  rules:
+    - host: kubedemo.local
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: user-admin-app
+              servicePort: 80
